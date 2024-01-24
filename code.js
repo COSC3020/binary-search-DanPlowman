@@ -1,9 +1,13 @@
 function binarySearch(list, element) {
-    var min = 0;
-    var max = list.length - 1;
+    let min = 0;
+    let max = list.length - 1;
+    
+    if (list.length=1 && list[0]===element)
+    {return 0;}
+    
     while (min <= max)
     {
-        var guess = Math.floor(((max+min)/2));
+        let guess = Math.floor(((max+min)/2));
         if (element === list[guess])
             {return guess;}
         else if (element > list[guess])
@@ -11,5 +15,6 @@ function binarySearch(list, element) {
         else
             {max = guess-1;}
     }
+
     return -1;
 }
